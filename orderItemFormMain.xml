@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><invoice>
+<number>INV-001</number>
+<date>2023-06-30</date>
+<items>
+<item>
+<name>Item 1</name>
+<quantity>2</quantity>
+<price>10.0</price>
+<total>20.0</total>
+</item>
+<item>
+<name>Item 4</name>
+<quantity>3</quantity>
+<price>8.0</price>
+<total>24.0</total>
+</item>
+<item>
+<name>Item 3</name>
+<quantity>1</quantity>
+<price>5.0</price>
+<total>5.0</total>
+</item>
+</items>
+</invoice>

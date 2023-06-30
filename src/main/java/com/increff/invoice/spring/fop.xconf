@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fop version="1.0">
+    <renderers>
+        <renderer mime="application/pdf">
+            <fonts>
+                <!-- Add your font configurations here -->
+                <font kerning="yes" embed-url="fonts/arial.ttf">
+                    <font-triplet name="Arial" style="normal" weight="normal"/>
+                </font>
+            </fonts>
+        </renderer>
+    </renderers>
+</fop>

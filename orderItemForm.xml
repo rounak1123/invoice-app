@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<invoice>
+    <number>INV-2023-001</number>
+    <date>2023-06-30</date>
+    <orderItems>
+        <orderItem>
+            <product>Product A</product>
+            <description>Description of Product A</description>
+            <quantity>2</quantity>
+        </orderItem>
+        <orderItem>
+            <product>Product B</product>
+            <description>Description of Product B</description>
+            <quantity>3</quantity>
+        </orderItem>
+        <orderItem>
+            <product>Product C</product>
+            <description>Description of Product C</description>
+            <quantity>1</quantity>
+        </orderItem>
+    </orderItems>
+</invoice>
