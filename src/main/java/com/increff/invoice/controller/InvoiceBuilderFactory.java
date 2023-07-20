@@ -41,6 +41,8 @@ public class InvoiceBuilderFactory {
         // Add more invoice details here
 
         Element itemsElement = document.createElement("items");
+        double revenue = 0.0;
+
         for (InvoiceItem item : invoice.getInvoiceItems()) {
             Element itemElement = document.createElement("item");
 
@@ -63,10 +65,19 @@ public class InvoiceBuilderFactory {
             Text totalText = document.createTextNode(String.valueOf(item.getTotal()));
             totalElement.appendChild(totalText);
             itemElement.appendChild(totalElement);
+            revenue += item.getTotal();
 
             itemsElement.appendChild(itemElement);
         }
         rootElement.appendChild(itemsElement);
+
+
+        System.out.println("revenue = "+ revenue);
+        Element totalAmount = document.createElement("totalAmount");
+        Text totalText = document.createTextNode(String.valueOf(revenue));
+        totalAmount.appendChild(totalText);
+        rootElement.appendChild(totalAmount);
+
         File file = new File("orderItemFormMain.xml");
         FileOutputStream fos = new FileOutputStream(file);
         TransformerFactory transformerFactory = TransformerFactory.newInstance();

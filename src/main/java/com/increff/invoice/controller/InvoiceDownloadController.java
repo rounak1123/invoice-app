@@ -1,6 +1,6 @@
 package com.increff.invoice.controller;
 
-import com.increff.invoice.controller.InvoiceBuilderFactory;
+
 import com.increff.invoice.model.InvoiceData;
 import com.increff.invoice.model.InvoiceItem;
 import org.apache.fop.apps.*;
@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.w3c.dom.Document;
-import org.xml.sax.SAXException;
 
-import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
@@ -29,39 +26,15 @@ public class InvoiceDownloadController {
     private static final String XSL_FILE_PATH = "/Users/rounakagrawal/Desktop/POS/invoiceApp/invoice-template.xsl";
     private static final String XML_FILE_PATH = "/Users/rounakagrawal/Desktop/POS/invoiceApp/orderItemFormMain.xml";
     private static final String OUTPUT_PDF_PATH = "/Users/rounakagrawal/Desktop/POS/invoiceApp/output1.pdf";
-//    private FopFactory fopFactory;
-
-//    public InvoiceDownloadController() throws IOException, SAXException {
-//        fopFactory = FopFactory.newInstance(new File(".").toURI());
-//    }
 
     @PostMapping("/api/generate-invoice")
     public String downloadInvoice(@RequestBody InvoiceData invoice) throws IOException, FOPException, TransformerException, ParserConfigurationException {
-//
-//        InvoiceBuilderFactory invoiceBuilderFactory = new InvoiceBuilderFactory();
-//        invoiceBuilderFactory.createInvoiceDocument(invoice);
 
-//        generateInvoicePDFUsingXmlAndXsl();
+        InvoiceBuilderFactory invoiceBuilderFactory = new InvoiceBuilderFactory();
+        invoiceBuilderFactory.createInvoiceDocument(invoice);
         return convertToBase64();
 
     }
-
-
-//    private InvoiceData createSampleInvoice() {
-//        // Create and populate the invoice object with sample data
-//        InvoiceData invoiceData = new InvoiceData();
-//        List<InvoiceItem> invoiceItems = new ArrayList<>();
-//        invoiceItems.add(new InvoiceItem("Item 1", 2, 10.00,  20.00));
-//        invoiceItems.add(new InvoiceItem("Item 4", 3, 8.00,  24.00));
-//        invoiceItems.add(new InvoiceItem("Item 3", 1, 5.00,  5.00));
-//        invoiceData.setNumber("INV-001");
-//        invoiceData.setDate("2023-06-30");
-//        invoiceData.setInvoiceItems(invoiceItems);
-//
-//        // Add more invoice details and items as needed
-//
-//        return invoiceData;
-//    }
 
     public static String convertToBase64() {
         try {

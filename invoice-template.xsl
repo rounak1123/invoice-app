@@ -40,7 +40,7 @@
                                 <fo:table-cell number-columns-spanned="2" border="solid 1pt" padding="5pt">
                                     <fo:block text-align="right">Total Number of Items:</fo:block>
                                 </fo:table-cell>
-                                <fo:table-cell border="solid 1pt" padding="5pt">
+                                <fo:table-cell number-columns-spanned="2" border="solid 1pt" padding="5pt">
                                     <fo:block>
                                         <xsl:value-of select="count(invoice/items/item)"/>
                                     </fo:block>
@@ -50,12 +50,13 @@
                                 <fo:table-cell number-columns-spanned="2" border="solid 1pt" padding="5pt">
                                     <fo:block text-align="right">Bill Total:</fo:block>
                                 </fo:table-cell>
-                                <fo:table-cell border="solid 1pt" padding="5pt">
+                                <fo:table-cell number-columns-spanned="2" border="solid 1pt" padding="5pt">
                                     <fo:block>
-                                        <xsl:value-of select="invoice/number"/>
+                                        <xsl:value-of select="invoice/totalAmount"/>
                                     </fo:block>
                                 </fo:table-cell>
                             </fo:table-row>
+
                         </fo:table-footer>
                         <fo:table-body>
                             <xsl:for-each select="invoice/items/item">

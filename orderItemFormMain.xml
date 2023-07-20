@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><invoice>
-<number>INV-001</number>
-<date>2023-06-30</date>
+<number>INV-44</number>
+<date>2023-07-17 16:12:22</date>
 <items>
 <item>
-<name>Item 1</name>
-<quantity>2</quantity>
-<price>10.0</price>
-<total>20.0</total>
-</item>
-<item>
-<name>Item 4</name>
-<quantity>3</quantity>
-<price>8.0</price>
-<total>24.0</total>
-</item>
-<item>
-<name>Item 3</name>
+<name>round neck size-m</name>
 <quantity>1</quantity>
-<price>5.0</price>
-<total>5.0</total>
+<price>0.02</price>
+<total>0.02</total>
 </item>
 </items>
+<totalAmount>0.02</totalAmount>
 </invoice>
